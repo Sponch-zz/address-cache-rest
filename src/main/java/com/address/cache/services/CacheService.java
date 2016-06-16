@@ -22,9 +22,9 @@ import static javax.ws.rs.core.Response.status;
 @Produces("application/json")
 @Api(value = "/cache", produces = "application/json", consumes = "application/json")
 public class
-SearchService {
+CacheService {
 
-    private static final Logger LOG = LoggerFactory.getLogger(SearchService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CacheService.class);
 
     private AddressCache addressCache = new AddressCache(60, TimeUnit.SECONDS);
 
