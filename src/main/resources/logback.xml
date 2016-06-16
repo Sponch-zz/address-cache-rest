@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<property name="LOGS_PATH" value="./log/address-cache-rest" />
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="file" class="ch.qos.logback.core.FileAppender">
+		<file>ws-search-result.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+		</encoder>
+		<file>${LOGS_PATH}/address-cache-rest.log</file>
+	</appender>
+
+	<logger name="org.jboss.resteasy" level="error" />
+
+	<logger name="com.hotels.search.result">
+		<level value="info"/>
+		<appender-ref ref="file" />
+	</logger>
+
+	<root>
+		<level value="info" />
+		<appender-ref ref="console" />
+	</root>
+
+</configuration>
